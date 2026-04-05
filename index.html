@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankush Gautam | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Vibrant Colors */
+        :root {
+            --primary: #4F46E5;
+            --secondary: #EC4899;
+            --tertiary: #10B981;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --text-main: #374151;
+            --text-muted: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Gradient Hero Section */
+        header {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 40px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: transform 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: #f3f4f6;
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        /* Cards Style */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Specific Border Colors for Hover */
+        .card.exp:hover { border-left-color: var(--primary); }
+        .card.proj:hover { border-left-color: var(--secondary); }
+        .card.edu:hover { border-left-color: var(--tertiary); }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .card .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        ul.custom-list {
+            list-style: none;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        ul.custom-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Skills Badges */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: transform 0.2s;
+            cursor: default;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header p { font-size: 1rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="animate-on-scroll">Ankush Gautam</h1>
+            <p class="animate-on-scroll">Data Analyst | Business Intelligence | Data Engineering</p>
+            <p class="animate-on-scroll"><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
+            <div class="social-links animate-on-scroll">
+                <a href="mailto:ankush159g@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="http://linkedin.com/in/cipher-x/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/zoneofankush-cloud" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="animate-on-scroll">
+            <h2>Professional Summary</h2>
+            <div class="card" style="border-left: 5px solid var(--primary);">
+                <p>Results-driven Data Analyst with 10+ years of cross-functional experience in financial analytics, operational intelligence, and business consulting. Proficient in SQL (MySQL, BigQuery), Python (Pandas, PySpark), Microsoft Fabric, and Power BI. Proven track record of architecting scalable data pipelines, performing statistical data cleaning, and delivering interactive dashboards that support business decision-making. Currently pursuing a BCA to formalize computer science foundations. Seeking to leverage deep quantitative domain expertise and technical skills in a data-focused role at a global technology organization.</p>
+            </div>
+        </section>
+
+        <section class="animate-on-scroll">
+            <h2>Technical Skills</h2>
+            <div class="card">
+                <div class="skills-container">
+                    <span class="skill-badge">Python (Pandas, yfinance)</span>
+                    <span class="skill-badge">SQL (MySQL, BigQuery)</span>
+                    <span class="skill-badge">PySpark & Spark SQL</span>
+                    <span class="skill-badge">Microsoft Fabric</span>
+                    <span class="skill-badge">Power BI (Direct Lake)</span>
+                    <span class="skill-badge">Azure</span>
+                    <span class="skill-badge">Data Modeling & ETL</span>
+                    <span class="skill-badge">Financial Modelling</span>
+                    <span class="skill-badge">DAX</span>
+                    <span class="skill-badge">Capital Budgeting & ROI</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="animate-on-scroll">
+            <h2>Key Projects & Achievements</h2>
+            
+            <div class="card proj">
+                <h3>Algorithmic Portfolio Engine & Data Pipeline</h3>
+                <div class="meta">Microsoft Fabric | PySpark | Power BI | Azure</div>
+                <ul class="custom-list">
+                    <li>Architected a scalable pipeline to ingest and process ~500K–1M+ rows of live historical stock data via <i>yfinance</i>.</li>
+                    <li>Applied statistical outlier detection (Z-score) and robust data transformations using PySpark and Spark SQL.</li>
+                    <li>Reduced processing time by <strong>80%</strong> by refactoring loops into vectorized, distributed operations.</li>
+                    <li>Stored processed datasets in OneLake and automated workflows via Azure Logic Apps, lowering compute costs.</li>
+                </ul>
+            </div>
+
+            <div class="card proj">
+                <h3>Enterprise Retail Analytics Engine</h3>
+                <div class="meta">Microsoft Fabric | Spark SQL | Power BI</div>
+                <ul class="custom-list">
+                    <li>Designed an ETL pipeline utilizing a Medallion architecture to process and unify fragmented retail sales data.</li>
+                    <li>Leveraged advanced Spark SQL (JOINs, window functions) for scalable data transformation and metric calculation.</li>
+                    <li>Built interactive KPI dashboards via Power BI Direct Lake, surfacing insights to improve business performance.</li>
+                </ul>
+            </div>
+
+            <div class="card proj">
+                <h3>Financial Risk & Bank Loan Analysis</h3>
+                <div class="meta">MySQL | GitHub</div>
+                <ul class="custom-list">
+                    <li>Executed quantitative risk analysis on a comprehensive bank loan dataset using advanced MySQL querying.</li>
+                    <li>Calculated core financial KPIs to assess default probabilities, documenting the full analytical methodology on GitHub.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="animate-on-scroll">
+            <h2>Professional Experience</h2>
+            
+            <div class="card exp">
+                <h3>Operations & Financial Analyst (Owner)</h3>
+                <div class="meta">Satwik -- Pure Veg Restaurant | Kolkata, India | Aug 2018 -- Jul 2024</div>
+                <ul class="custom-list">
+                    <li>Designed a custom operational analytics system tracking daily revenue, cost, and inventory, enabling data-driven menu optimization.</li>
+                    <li>Reduced food wastage from an industry average of 6--10% to under <strong>1%</strong>, driving significant overhead savings.</li>
+                    <li>Diversified revenue streams via multi-channel integrations, cross-selling premium items to increase average order value.</li>
+                    <li>Managed full-cycle financial reporting (P\&L, cash flows) maintaining <strong>100% statutory tax compliance</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="card exp">
+                <h3>Tax and Finance Associate (Independent Consultant)</h3>
+                <div class="meta">Self-Employed | Kolkata & Patna, India | Feb 2014 -- Dec 2017</div>
+                <ul class="custom-list">
+                    <li>Performed quantitative capital budgeting analyses (NPV, IRR, ROI) to support executive-level investment decisions.</li>
+                    <li>Engineered comprehensive financial models to evaluate client portfolios and guide corporate structuring strategy.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="animate-on-scroll">
+            <h2>Education & Certifications</h2>
+            
+            <div class="card edu">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <div class="meta">Manipal University Jaipur | Oct 2024 -- Feb 2027</div>
+                
+                <h3 style="margin-top: 20px;">CA Intermediate & Foundation</h3>
+                <div class="meta">The Institute of Chartered Accountants of India (ICAI) | Feb 2010 -- Nov 2012</div>
+            </div>
+
+            <div class="card edu">
+                <h3>Certifications</h3>
+                <ul class="custom-list">
+                    <li><strong>SQL for Data Science Specialization (incl. Capstone)</strong> -- UC Davis / Coursera</li>
+                    <li><strong>Investment Management with Python</strong> -- EDHEC Business School / Coursera</li>
+                    <li><strong>The Language and Tools of Financial Analysis</strong> -- University of Melbourne / Coursera</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            
+            // Add a slight delay to header elements for a cascading entrance effect
+            elementsToAnimate.forEach((el, index) => {
+                if(el.closest('header')) {
+                    el.style.transitionDelay = `${index * 0.15}s`;
+                    // Ensure header animations trigger immediately 
+                    setTimeout(() => el.classList.add('visible'), 100);
+                } else {
+                    observer.observe(el);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
